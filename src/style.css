@@ -152,6 +152,11 @@ ul{ list-style: none; }
     -webkit-text-stroke-color: black;
 }
 
+.f-hor{
+    color: black;
+    
+}
+
 /*//////////////////////////////////////// Menu ////////////////////////////////////////*/
 
 .tree{
