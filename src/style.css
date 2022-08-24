@@ -69,6 +69,7 @@ ul{ list-style: none; }
     position: relative;
     left: 2%;
     width: 96%;
+    height: 400px;
     background-color: rgba(109, 232, 236,0.3);
     display: flex;
     flex-wrap: wrap;

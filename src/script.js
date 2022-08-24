@@ -3,10 +3,13 @@
 /**
  * Tamaño máximo de caracteres en la línea de un producto en el menú.
  */
-const TAM = 33;
+const TAM = 34;
 
 // ///////////////////////////////// Productos //////////////////////////////////////////////
 
+/**
+ * Descripción de los alimentos.
+ */
 var alimentos = [
     {
         nombre: 'Comida 1',
@@ -28,6 +31,9 @@ var alimentos = [
     }
 ];
 
+/**
+ * Descripción de las bebidas.
+ */
 var bebidas = [
     {
         nombre: 'Bebida 1',
@@ -58,30 +64,33 @@ var bebidas = [
     }
 ];
 
-var botanas = [
+/**
+ * Descripción de las combos
+ */
+var combos = [
     {
-        nombre: 'Botana 1',
+        nombre: 'Combo 1',
         precio: 2.50,
         foto: 'beb3.jpg',
-        ingredientes: 'Aquí van los ingredientes...',
+        ingredientes: 'Aquí van los elementos...',
         htmlEstruct: function () {
             return htmlFormat(this.nombre, this.precio);
         }
     },
     {
-        nombre: 'Botana 2',
+        nombre: 'Combo 2',
         precio: 27,
         foto: 'beb3.jpg',
-        ingredientes: 'Aquí van los ingredientes...',
+        ingredientes: 'Aquí van los elementos...',
         htmlEstruct: function () {
             return htmlFormat(this.nombre, this.precio);
         }
     },
     {
-        nombre: 'Botana 32',
+        nombre: 'Combo 32',
         precio: 17,
         foto: 'beb3.jpg',
-        ingredientes: 'Aquí van los ingredientes...',
+        ingredientes: 'Aquí van los elementos...',
         htmlEstruct: function () {
             return htmlFormat(this.nombre, this.precio);
         }
@@ -95,9 +104,9 @@ const beb1 = bebidas[0].htmlEstruct();
 const beb2 = bebidas[1].htmlEstruct();
 const beb3 = bebidas[2].htmlEstruct();
 
-const bot1 = botanas[0].htmlEstruct();
-const bot2 = botanas[1].htmlEstruct();
-const bot3 = botanas[2].htmlEstruct();
+const comb1 = combos[0].htmlEstruct();
+const comb2 = combos[1].htmlEstruct();
+const comb3 = combos[2].htmlEstruct();
 
 ////////////////////////////////////// Functions ////////////////////////////////////
 
@@ -126,9 +135,9 @@ function ini(){
     const bebida2 = document.getElementById('beb2');
     const bebida3 = document.getElementById('beb3');
 
-    const botana1 = document.getElementById('bot1');
-    const botana2 = document.getElementById('bot2');
-    const botana3 = document.getElementById('bot3');
+    const combo1 = document.getElementById('comb1');
+    const combo2 = document.getElementById('comb2');
+    const combo3 = document.getElementById('comb3');
 
 
     comida1.innerHTML = com1;
@@ -138,9 +147,9 @@ function ini(){
     bebida2.innerHTML = beb2;
     bebida3.innerHTML = beb3;
 
-    botana1.innerHTML = bot1;
-    botana2.innerHTML = bot2;
-    botana3.innerHTML = bot3;
+    combo1.innerHTML = comb1;
+    combo2.innerHTML = comb2;
+    combo3.innerHTML = comb3;
 }
 
 /**
@@ -165,14 +174,14 @@ function det(item){
         case beb3:
             item.innerHTML += htmlDetails(bebidas[2].nombre, bebidas[2].foto, bebidas[2].ingredientes);
             break;
-        case bot1:
-            item.innerHTML += htmlDetails(botanas[0].nombre, botanas[0].foto, botanas[0].ingredientes);
+        case comb1:
+            item.innerHTML += htmlDetails(combos[0].nombre, combos[0].foto, combos[0].ingredientes);
             break;
-        case bot2:
-            item.innerHTML += htmlDetails(botanas[1].nombre, botanas[1].foto, botanas[1].ingredientes);
+        case comb2:
+            item.innerHTML += htmlDetails(combos[1].nombre, combos[1].foto, combos[1].ingredientes);
             break;
-        case bot3:
-            item.innerHTML += htmlDetails(botanas[1].nombre, botanas[1].foto, botanas[1].ingredientes);
+        case comb3:
+            item.innerHTML += htmlDetails(combos[1].nombre, combos[1].foto, combos[1].ingredientes);
             break;
         default:
             item.innerHTML = del(item);
