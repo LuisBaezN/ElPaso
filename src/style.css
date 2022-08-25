@@ -65,16 +65,15 @@ ul{ list-style: none; }
 
 /*//////////////////////////// Dimensions, position and colorr ////////////////////////////*/
 
-.map{
+.dpc-map{
     position: relative;
-    left: 2%;
-    width: 96%;
-    height: 400px;
+    left: 5%;
+    width: 90%;
     background-color: rgba(109, 232, 236,0.3);
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
-    border-radius: 10px;
+    border-radius: 17px;
     border: 1px solid rgba(255, 255, 255, 0.18);
     box-shadow: 0 8px 8px rgba(0, 0, 0, 0.37);
 }
@@ -89,6 +88,8 @@ ul{ list-style: none; }
     border-radius: 10px;
     border: 1px solid rgba(255, 255, 255, 0.18);
     box-shadow: 0 8px 8px rgba(0, 0, 0, 0.37);
+    backdrop-filter: blur(3px);
+    -webkit-backdrop-filter: blur(3px);
 }
 
 .dpc-logo{
@@ -143,6 +144,11 @@ ul{ list-style: none; }
     align-content: center;
 }
 
+.dpc-ico{
+    position: relative;
+    top: 10px;
+}
+
 /*//////////////////////////////////// Font settings ////////////////////////////////////*/
 
 .f-desc{
@@ -166,6 +172,11 @@ ul{ list-style: none; }
 }
 
 .box{ background: #eeede6; }
+
+.men-sec{
+    display: flex;
+    justify-content: space-between;
+}
 
 /*///////////////////////////////////// Animations /////////////////////////////////////*/
 

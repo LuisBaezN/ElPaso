@@ -12,19 +12,73 @@ const TAM = 34;
  */
 var alimentos = [
     {
-        nombre: 'Comida 1',
-        precio: 112,
-        foto: 'beb3.jpg',
-        ingredientes: 'Aquí van los ingredientes...',
+        nombre: 'Hamburguesa',
+        precio: 40,
+        foto: 'hamb.jpg',
+        ingredientes: 'Carne de res, lechuga, queso, jitomate, mayonesa y mostaza.',
         htmlEstruct: function () {
             return htmlFormat(this.nombre, this.precio);
         }
     },
     {
-        nombre: 'Comida 2',
-        precio: 7,
-        foto: 'beb3.jpg',
-        ingredientes: 'Aquí van los ingredientes...',
+        nombre: 'Hot dog',
+        precio: 20,
+        foto: 'hotdog.jpg',
+        ingredientes: 'Salchicha de pavo, zanahoria, jitomate, cebolla, mayonesa y mostaza.',
+        htmlEstruct: function () {
+            return htmlFormat(this.nombre, this.precio);
+        }
+    },
+    {
+        nombre: 'Papas a la francesa',
+        precio: 15,
+        foto: 'fries.jpg',
+        ingredientes: 'Papa y sal.',
+        htmlEstruct: function () {
+            return htmlFormat(this.nombre, this.precio);
+        }
+    },
+    {
+        nombre: 'Alitas  ',
+        precio: 25,
+        foto: 'wings.jpg',
+        ingredientes: 'Ala de pollo, ajo y cebolla.',
+        htmlEstruct: function () {
+            return htmlFormat(this.nombre, this.precio);
+        }
+    },
+    {
+        nombre: 'Torta',
+        precio: 20,
+        foto: 'torta.jpg',
+        ingredientes: 'Pechuga de pollo, lechuga, jitomate, cebolla, queso y mayonesa.',
+        htmlEstruct: function () {
+            return htmlFormat(this.nombre, this.precio);
+        }
+    },
+    {
+        nombre: 'Chalupas',
+        precio: 10,
+        foto: 'chalu.jpg',
+        ingredientes: 'Tortilla, salsa, cebolla, carne de pollo deshebrada.',
+        htmlEstruct: function () {
+            return htmlFormat(this.nombre, this.precio);
+        }
+    },
+    {
+        nombre: 'Tostada',
+        precio: 15,
+        foto: 'tost.jpg',
+        ingredientes: 'Tortilla, frijoles, lechuga, carne de pollo deshebrada, quesillo, crema y salsa.',
+        htmlEstruct: function () {
+            return htmlFormat(this.nombre, this.precio);
+        }
+    },
+    {
+        nombre: 'Banderilla  ',
+        precio: 12,
+        foto: 'bander.jpg',
+        ingredientes: 'Salchiha, pan y huevo.',
         htmlEstruct: function () {
             return htmlFormat(this.nombre, this.precio);
         }
@@ -36,28 +90,28 @@ var alimentos = [
  */
 var bebidas = [
     {
-        nombre: 'Bebida 1',
-        precio: 22.50,
-        foto: 'beb3.jpg',
-        ingredientes: 'Aquí van los ingredientes...',
+        nombre: 'Michelada',
+        precio: 70,
+        foto: 'mich.jpg',
+        ingredientes: 'Cerveza, salsa Maggi, salsa inglesa, Clamato, limón, sal y salsa picante.',
         htmlEstruct: function () {
             return htmlFormat(this.nombre, this.precio);
         }
     },
     {
-        nombre: 'Bebida 2',
-        precio: 56.50,
-        foto: 'beb3.jpg',
-        ingredientes: 'Aquí van los ingredientes...',
+        nombre: 'Cantarito  ',
+        precio: 50,
+        foto: 'canta.jpg',
+        ingredientes: 'Tequila, jugo de toronja y limón.',
         htmlEstruct: function () {
             return htmlFormat(this.nombre, this.precio);
         }
     },
     {
-        nombre: 'Bebida 3',
-        precio: 71,
-        foto: 'beb3.jpg',
-        ingredientes: 'Aquí van los ingredientes...',
+        nombre: 'Pulque',
+        precio: 10,
+        foto: 'pulque.jpg',
+        ingredientes: 'Bebida fermentada proveniente del maguey.',
         htmlEstruct: function () {
             return htmlFormat(this.nombre, this.precio);
         }
@@ -97,16 +151,47 @@ var combos = [
     }
 ];
 
+var postres = [
+    {
+        nombre: 'Ensalada (manzana) ',
+        precio: 15,
+        foto: 'ensa.jpg',
+        ingredientes: 'Manzana, durazno, leche condensada y crema.',
+        htmlEstruct: function () {
+            return htmlFormat(this.nombre, this.precio);
+        }
+    },
+    {
+        nombre: 'Fresas con crema',
+        precio: 20,
+        foto: 'fresas.jpg',
+        ingredientes: 'Fresas, crema.',
+        htmlEstruct: function () {
+            return htmlFormat(this.nombre, this.precio);
+        }
+    }
+];
+
+// >>>>>>>>>> Add here the new product!!!!!!!!!!!! 
+const comb1 = combos[0].htmlEstruct();
+const comb2 = combos[1].htmlEstruct();
+const comb3 = combos[2].htmlEstruct();
+
 const com1 = alimentos[0].htmlEstruct();
 const com2 = alimentos[1].htmlEstruct();
+const com3 = alimentos[2].htmlEstruct();
+const com4 = alimentos[3].htmlEstruct();
+const com5 = alimentos[4].htmlEstruct();
+const com6 = alimentos[5].htmlEstruct();
+const com7 = alimentos[6].htmlEstruct();
+const com8 = alimentos[7].htmlEstruct();
 
 const beb1 = bebidas[0].htmlEstruct();
 const beb2 = bebidas[1].htmlEstruct();
 const beb3 = bebidas[2].htmlEstruct();
 
-const comb1 = combos[0].htmlEstruct();
-const comb2 = combos[1].htmlEstruct();
-const comb3 = combos[2].htmlEstruct();
+const pos1 = postres[0].htmlEstruct();
+const pos2 = postres[1].htmlEstruct();
 
 ////////////////////////////////////// Functions ////////////////////////////////////
 
@@ -119,7 +204,17 @@ const comb3 = combos[2].htmlEstruct();
 function htmlFormat(nombre, precio){
     let dot = '.';
     precio = '$' + precio.toFixed(2);
-    let dots = (TAM - (precio.length + nombre.length))*2;
+
+    let c = 0;
+
+    for (let i in nombre){
+        if (nombre[i] === ' ')
+        c++;
+    }
+
+    c = c <= 1 ? c = 0 : c += 1;
+
+    let dots = (TAM - (precio.length + nombre.length - c))*2;
 
     return `<p>${nombre} ${dot.repeat(dots)} ${precio}</p>`
 }
@@ -128,28 +223,48 @@ function htmlFormat(nombre, precio){
  * Desplega los productos y precios del menú en el DOM.
  */
 function ini(){
+    // >>>>>>>>>> Add here the new product!!!!!!!!!!!! 
+    const combo1 = document.getElementById('comb1');
+    const combo2 = document.getElementById('comb2');
+    const combo3 = document.getElementById('comb3');
+
     const comida1 = document.getElementById('com1');
     const comida2 = document.getElementById('com2');
+    const comida3 = document.getElementById('com3');
+    const comida4 = document.getElementById('com4');
+    const comida5 = document.getElementById('com5');
+    const comida6 = document.getElementById('com6');
+    const comida7 = document.getElementById('com7');
+    const comida8 = document.getElementById('com8');
 
     const bebida1 = document.getElementById('beb1');
     const bebida2 = document.getElementById('beb2');
     const bebida3 = document.getElementById('beb3');
 
-    const combo1 = document.getElementById('comb1');
-    const combo2 = document.getElementById('comb2');
-    const combo3 = document.getElementById('comb3');
+    const post1 = document.getElementById('pos1');
+    const post2 = document.getElementById('pos2');
 
+
+    // >>>>>>>>>> Add here the new product!!!!!!!!!!!! 
+    combo1.innerHTML = comb1;
+    combo2.innerHTML = comb2;
+    combo3.innerHTML = comb3;
 
     comida1.innerHTML = com1;
     comida2.innerHTML = com2;
+    comida3.innerHTML = com3;
+    comida4.innerHTML = com4;
+    comida5.innerHTML = com5;
+    comida6.innerHTML = com6;
+    comida7.innerHTML = com7;
+    comida8.innerHTML = com8;
 
     bebida1.innerHTML = beb1;
     bebida2.innerHTML = beb2;
     bebida3.innerHTML = beb3;
 
-    combo1.innerHTML = comb1;
-    combo2.innerHTML = comb2;
-    combo3.innerHTML = comb3;
+    post1.innerHTML = pos1;
+    post2.innerHTML = pos2;
 }
 
 /**
@@ -157,13 +272,31 @@ function ini(){
  * @param {object} item - Etiqueta que enlaza al producto.
  */
 function det(item){
-
+    // >>>>>>>>>> Add here the new product!!!!!!!!!!!! 
     switch (item.innerHTML){
         case com1:
             item.innerHTML += htmlDetails(alimentos[0].nombre, alimentos[0].foto, alimentos[0].ingredientes);
             break;
         case com2:
             item.innerHTML += htmlDetails(alimentos[1].nombre, alimentos[1].foto, alimentos[1].ingredientes);
+            break;
+        case com3:
+            item.innerHTML += htmlDetails(alimentos[2].nombre, alimentos[2].foto, alimentos[2].ingredientes);
+            break;
+        case com4:
+            item.innerHTML += htmlDetails(alimentos[3].nombre, alimentos[3].foto, alimentos[3].ingredientes);
+            break;
+        case com5:
+            item.innerHTML += htmlDetails(alimentos[4].nombre, alimentos[4].foto, alimentos[4].ingredientes);
+            break;
+        case com6:
+            item.innerHTML += htmlDetails(alimentos[5].nombre, alimentos[5].foto, alimentos[5].ingredientes);
+            break;
+        case com7:
+            item.innerHTML += htmlDetails(alimentos[6].nombre, alimentos[6].foto, alimentos[6].ingredientes);
+            break;
+        case com8:
+            item.innerHTML += htmlDetails(alimentos[7].nombre, alimentos[7].foto, alimentos[7].ingredientes);
             break;
         case beb1:
             item.innerHTML += htmlDetails(bebidas[0].nombre, bebidas[0].foto, bebidas[0].ingredientes);
@@ -182,6 +315,12 @@ function det(item){
             break;
         case comb3:
             item.innerHTML += htmlDetails(combos[1].nombre, combos[1].foto, combos[1].ingredientes);
+            break;
+        case pos1:
+            item.innerHTML += htmlDetails(postres[0].nombre, postres[0].foto, postres[0].ingredientes);
+            break;
+        case pos2:
+            item.innerHTML += htmlDetails(postres[1].nombre, postres[1].foto, postres[1].ingredientes);
             break;
         default:
             item.innerHTML = del(item);
