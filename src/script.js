@@ -8,6 +8,39 @@ const TAM = 34;
 // ///////////////////////////////// Productos //////////////////////////////////////////////
 
 /**
+ * Descripción de las combos
+ */
+ var combos = [
+    {
+        nombre: 'Combo 1',
+        precio: 50,
+        foto: 'hotdog.jpg',
+        ingredientes: 'Hot dog, papas y refresco.',
+        htmlEstruct: function () {
+            return htmlFormat(this.nombre, this.precio);
+        }
+    },
+    {
+        nombre: 'Combo 2',
+        precio: 60,
+        foto: 'hamb.jpg',
+        ingredientes: 'Hamburguesa, papas y refresco.',
+        htmlEstruct: function () {
+            return htmlFormat(this.nombre, this.precio);
+        }
+    },
+    {
+        nombre: 'Combo 3',
+        precio: 55,
+        foto: 'torta.jpg',
+        ingredientes: 'Torta, papas y refresco.',
+        htmlEstruct: function () {
+            return htmlFormat(this.nombre, this.precio);
+        }
+    }
+];
+
+/**
  * Descripción de los alimentos.
  */
 var alimentos = [
@@ -118,39 +151,10 @@ var bebidas = [
     }
 ];
 
-/**
- * Descripción de las combos
- */
-var combos = [
-    {
-        nombre: 'Combo 1',
-        precio: 2.50,
-        foto: 'beb3.jpg',
-        ingredientes: 'Aquí van los elementos...',
-        htmlEstruct: function () {
-            return htmlFormat(this.nombre, this.precio);
-        }
-    },
-    {
-        nombre: 'Combo 2',
-        precio: 27,
-        foto: 'beb3.jpg',
-        ingredientes: 'Aquí van los elementos...',
-        htmlEstruct: function () {
-            return htmlFormat(this.nombre, this.precio);
-        }
-    },
-    {
-        nombre: 'Combo 32',
-        precio: 17,
-        foto: 'beb3.jpg',
-        ingredientes: 'Aquí van los elementos...',
-        htmlEstruct: function () {
-            return htmlFormat(this.nombre, this.precio);
-        }
-    }
-];
 
+/**
+ * Descripoción de los postres
+ */
 var postres = [
     {
         nombre: 'Ensalada (manzana) ',
@@ -212,7 +216,7 @@ function htmlFormat(nombre, precio){
         c++;
     }
 
-    c = c <= 1 ? c = 0 : c += 1;
+    c = c <= 1 ? c = 0 : c;
 
     let dots = (TAM - (precio.length + nombre.length - c))*2;
 
