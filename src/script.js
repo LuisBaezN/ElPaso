@@ -3,7 +3,7 @@
 /**
  * Tamaño máximo de caracteres en la línea de un producto en el menú.
  */
-const TAM = 34;
+const TAM = 32;
 
 // ///////////////////////////////// Productos //////////////////////////////////////////////
 
@@ -366,4 +366,9 @@ function del(cont){
 
 console.log('> Running app...');
 
-ini();  
+ini();
+
+setTimeout(function () {
+    let cont = document.getElementById('comb1');
+    det(cont);
+}, 3000);
