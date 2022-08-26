@@ -12,6 +12,7 @@ const TAM = 32;
  */
  var combos = [
     {
+        id: 'comb1',
         nombre: 'Combo 1',
         precio: 50,
         foto: 'hotdog.jpg',
@@ -21,6 +22,7 @@ const TAM = 32;
         }
     },
     {
+        id: 'comb2',
         nombre: 'Combo 2',
         precio: 60,
         foto: 'hamb.jpg',
@@ -30,6 +32,7 @@ const TAM = 32;
         }
     },
     {
+        id: 'comb3',
         nombre: 'Combo 3',
         precio: 55,
         foto: 'torta.jpg',
@@ -45,6 +48,7 @@ const TAM = 32;
  */
 var alimentos = [
     {
+        id: 'com1',
         nombre: 'Hamburguesa',
         precio: 40,
         foto: 'hamb.jpg',
@@ -54,6 +58,7 @@ var alimentos = [
         }
     },
     {
+        id: 'com2',
         nombre: 'Hot dog',
         precio: 20,
         foto: 'hotdog.jpg',
@@ -63,6 +68,7 @@ var alimentos = [
         }
     },
     {
+        id: 'com3',
         nombre: 'Papas a la francesa',
         precio: 15,
         foto: 'fries.jpg',
@@ -72,7 +78,8 @@ var alimentos = [
         }
     },
     {
-        nombre: 'Alitas  ',
+        id: 'com4',
+        nombre: 'Alitas',
         precio: 25,
         foto: 'wings.jpg',
         ingredientes: 'Ala de pollo, ajo y cebolla.',
@@ -81,6 +88,7 @@ var alimentos = [
         }
     },
     {
+        id: 'com5',
         nombre: 'Torta',
         precio: 20,
         foto: 'torta.jpg',
@@ -90,6 +98,7 @@ var alimentos = [
         }
     },
     {
+        id: 'com6',
         nombre: 'Chalupas',
         precio: 10,
         foto: 'chalu.jpg',
@@ -99,6 +108,7 @@ var alimentos = [
         }
     },
     {
+        id: 'com7',
         nombre: 'Tostada',
         precio: 15,
         foto: 'tost.jpg',
@@ -108,7 +118,8 @@ var alimentos = [
         }
     },
     {
-        nombre: 'Banderilla  ',
+        id: 'com8',
+        nombre: 'Banderilla',
         precio: 12,
         foto: 'bander.jpg',
         ingredientes: 'Salchiha, pan y huevo.',
@@ -123,6 +134,7 @@ var alimentos = [
  */
 var bebidas = [
     {
+        id: 'beb1',
         nombre: 'Michelada',
         precio: 70,
         foto: 'mich.jpg',
@@ -132,7 +144,8 @@ var bebidas = [
         }
     },
     {
-        nombre: 'Cantarito  ',
+        id: 'beb2',
+        nombre: 'Cantarito',
         precio: 50,
         foto: 'canta.jpg',
         ingredientes: 'Tequila, jugo de toronja y limón.',
@@ -141,6 +154,7 @@ var bebidas = [
         }
     },
     {
+        id: 'beb3',
         nombre: 'Pulque',
         precio: 10,
         foto: 'pulque.jpg',
@@ -157,7 +171,8 @@ var bebidas = [
  */
 var postres = [
     {
-        nombre: 'Ensalada (manzana) ',
+        id: 'pos1',
+        nombre: 'Ensalada de manzana',
         precio: 15,
         foto: 'ensa.jpg',
         ingredientes: 'Manzana, durazno, leche condensada y crema.',
@@ -166,6 +181,7 @@ var postres = [
         }
     },
     {
+        id: 'pos2',
         nombre: 'Fresas con crema',
         precio: 20,
         foto: 'fresas.jpg',
@@ -206,21 +222,8 @@ const pos2 = postres[1].htmlEstruct();
  * @returns 
  */
 function htmlFormat(nombre, precio){
-    let dot = '.';
     precio = '$' + precio.toFixed(2);
-
-    let c = 0;
-
-    for (let i in nombre){
-        if (nombre[i] === ' ')
-        c++;
-    }
-
-    c = c <= 1 ? c = 0 : c;
-
-    let dots = (TAM - (precio.length + nombre.length - c))*2;
-
-    return `<p>${nombre} ${dot.repeat(dots)} ${precio}</p>`
+    return `<div class="comp-desc"><p>${nombre}</p></div><div class="comp-desc"><p>. . . . . . .</p></div><div class="comp-desc"><p>${precio}</p></div>`
 }
 
 /**
@@ -277,57 +280,136 @@ function ini(){
  */
 function det(item){
     // >>>>>>>>>> Add here the new product!!!!!!!!!!!! 
+    let table;
     switch (item.innerHTML){
         case com1:
-            item.innerHTML += htmlDetails(alimentos[0].nombre, alimentos[0].foto, alimentos[0].ingredientes);
+            table = document.getElementById(`table-${alimentos[0].id}`);
+            if (table.innerHTML.length === 0){
+                table.innerHTML += htmlDetails(alimentos[0].nombre, alimentos[0].foto, alimentos[0].ingredientes);
+            } else {
+                table.innerHTML = '';
+            }
             break;
         case com2:
-            item.innerHTML += htmlDetails(alimentos[1].nombre, alimentos[1].foto, alimentos[1].ingredientes);
+            table = document.getElementById(`table-${alimentos[1].id}`);
+            if (table.innerHTML.length === 0){
+                table.innerHTML += htmlDetails(alimentos[1].nombre, alimentos[1].foto, alimentos[1].ingredientes);
+            } else {
+                table.innerHTML = '';
+            }
             break;
         case com3:
-            item.innerHTML += htmlDetails(alimentos[2].nombre, alimentos[2].foto, alimentos[2].ingredientes);
+            table = document.getElementById(`table-${alimentos[2].id}`);
+            if (table.innerHTML.length === 0){
+                table.innerHTML += htmlDetails(alimentos[2].nombre, alimentos[2].foto, alimentos[2].ingredientes);
+            } else {
+                table.innerHTML = '';
+            }
             break;
         case com4:
-            item.innerHTML += htmlDetails(alimentos[3].nombre, alimentos[3].foto, alimentos[3].ingredientes);
+            table = document.getElementById(`table-${alimentos[3].id}`);
+            if (table.innerHTML.length === 0){
+                table.innerHTML += htmlDetails(alimentos[3].nombre, alimentos[3].foto, alimentos[3].ingredientes);
+            } else {
+                table.innerHTML = '';
+            }
             break;
         case com5:
-            item.innerHTML += htmlDetails(alimentos[4].nombre, alimentos[4].foto, alimentos[4].ingredientes);
+            table = document.getElementById(`table-${alimentos[4].id}`);
+            if (table.innerHTML.length === 0){
+                table.innerHTML += htmlDetails(alimentos[4].nombre, alimentos[4].foto, alimentos[4].ingredientes);
+            } else {
+                table.innerHTML = '';
+            }
             break;
         case com6:
-            item.innerHTML += htmlDetails(alimentos[5].nombre, alimentos[5].foto, alimentos[5].ingredientes);
+            table = document.getElementById(`table-${alimentos[5].id}`);
+            if (table.innerHTML.length === 0){
+                table.innerHTML += htmlDetails(alimentos[5].nombre, alimentos[5].foto, alimentos[5].ingredientes);
+            } else {
+                table.innerHTML = '';
+            }
             break;
         case com7:
-            item.innerHTML += htmlDetails(alimentos[6].nombre, alimentos[6].foto, alimentos[6].ingredientes);
+            table = document.getElementById(`table-${alimentos[6].id}`);
+            if (table.innerHTML.length === 0){
+                table.innerHTML += htmlDetails(alimentos[6].nombre, alimentos[6].foto, alimentos[6].ingredientes);
+            } else {
+                table.innerHTML = '';
+            }
             break;
         case com8:
-            item.innerHTML += htmlDetails(alimentos[7].nombre, alimentos[7].foto, alimentos[7].ingredientes);
+            table = document.getElementById(`table-${alimentos[7].id}`);
+            if (table.innerHTML.length === 0){
+                table.innerHTML += htmlDetails(alimentos[7].nombre, alimentos[7].foto, alimentos[7].ingredientes);
+            } else {
+                table.innerHTML = '';
+            }
             break;
         case beb1:
-            item.innerHTML += htmlDetails(bebidas[0].nombre, bebidas[0].foto, bebidas[0].ingredientes);
+            table = document.getElementById(`table-${bebidas[0].id}`);
+            if (table.innerHTML.length === 0){
+                table.innerHTML += htmlDetails(bebidas[0].nombre, bebidas[0].foto, bebidas[0].ingredientes);
+            } else {
+                table.innerHTML = '';
+            }
             break;
         case beb2:
-            item.innerHTML += htmlDetails(bebidas[1].nombre, bebidas[1].foto, bebidas[1].ingredientes);
+            table = document.getElementById(`table-${bebidas[1].id}`);
+            if (table.innerHTML.length === 0){
+                table.innerHTML += htmlDetails(bebidas[1].nombre, bebidas[1].foto, bebidas[1].ingredientes);
+            } else {
+                table.innerHTML = '';
+            }
             break;
         case beb3:
-            item.innerHTML += htmlDetails(bebidas[2].nombre, bebidas[2].foto, bebidas[2].ingredientes);
+            table = document.getElementById(`table-${bebidas[2].id}`);
+            if (table.innerHTML.length === 0){
+                table.innerHTML += htmlDetails(bebidas[2].nombre, bebidas[2].foto, bebidas[2].ingredientes);
+            } else {
+                table.innerHTML = '';
+            }
             break;
         case comb1:
-            item.innerHTML += htmlDetails(combos[0].nombre, combos[0].foto, combos[0].ingredientes);
+            table = document.getElementById(`table-${combos[0].id}`);
+            if (table.innerHTML.length === 0){
+                table.innerHTML += htmlDetails(combos[0].nombre, combos[0].foto, combos[0].ingredientes);
+            } else {
+                table.innerHTML = '';
+            }
             break;
         case comb2:
-            item.innerHTML += htmlDetails(combos[1].nombre, combos[1].foto, combos[1].ingredientes);
+            table = document.getElementById(`table-${combos[1].id}`);
+            if (table.innerHTML.length === 0){
+                table.innerHTML += htmlDetails(combos[1].nombre, combos[1].foto, combos[1].ingredientes);
+            } else {
+                table.innerHTML = '';
+            }
             break;
         case comb3:
-            item.innerHTML += htmlDetails(combos[1].nombre, combos[1].foto, combos[1].ingredientes);
+            table = document.getElementById(`table-${combos[2].id}`);
+            if (table.innerHTML.length === 0){
+                table.innerHTML += htmlDetails(combos[2].nombre, combos[2].foto, combos[2].ingredientes);
+            } else {
+                table.innerHTML = '';
+            }
             break;
         case pos1:
-            item.innerHTML += htmlDetails(postres[0].nombre, postres[0].foto, postres[0].ingredientes);
+            table = document.getElementById(`table-${postres[0].id}`);
+            if (table.innerHTML.length === 0){
+                table.innerHTML += htmlDetails(postres[0].nombre, postres[0].foto, postres[0].ingredientes);
+            } else {
+                table.innerHTML = '';
+            }
             break;
         case pos2:
-            item.innerHTML += htmlDetails(postres[1].nombre, postres[1].foto, postres[1].ingredientes);
+            table = document.getElementById(`table-${postres[1].id}`);
+            if (table.innerHTML.length === 0){
+                table.innerHTML += htmlDetails(postres[1].nombre, postres[1].foto, postres[1].ingredientes);
+            } else {
+                table.innerHTML = '';
+            }
             break;
-        default:
-            item.innerHTML = del(item);
     }
 }
 
@@ -342,25 +424,6 @@ function htmlDetails(nom, img, desc) {
     return `<div class="dpc-desc"><div class="dpc-dbox"><img src="assets/${img}" alt="${nom}" style="border-radius: 100px; width: 130px;"></div><div class="dpc-dbox"><p class="f-desc">${desc}</p></div></div><br>`;
 }
 
-/**
- * Borra los detalles del producto en el DOM.
- * @param {object} cont - Etiqueta que enlaza al producto.
- * @returns 
- */
-function del(cont){
-    let limit = '>';
-    let con = 0;
-    let inc = 0;
-
-    while (con != 2){
-        if (cont.innerHTML[inc] === limit){
-            con++;
-        }
-        inc++;
-    }
-
-    return cont.innerHTML.slice(0,inc);
-}
 
 ////////////////////////////////////// Main ///////////////////////////////////////
 
@@ -369,6 +432,6 @@ console.log('> Running app...');
 ini();
 
 setTimeout(function () {
-    let cont = document.getElementById('comb1');
+    let cont = document.getElementById('comb2');
     det(cont);
 }, 3000);
