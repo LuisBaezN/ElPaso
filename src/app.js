@@ -1,10 +1,5 @@
 'use strict';
 
-/**
- * Tamaño máximo de caracteres en la línea de un producto en el menú.
- */
-const TAM = 32;
-
 // ///////////////////////////////// Productos //////////////////////////////////////////////
 
 /**
@@ -16,7 +11,7 @@ const TAM = 32;
         nombre: 'Combo 1',
         precio: 50,
         foto: 'hotdog.jpg',
-        ingredientes: 'Hot dog, papas y refresco.',
+        ingredientes: 'Incluye: Hot dog, papas y refresco.',
         htmlEstruct: function () {
             return htmlFormat(this.nombre, this.precio);
         }
@@ -26,7 +21,7 @@ const TAM = 32;
         nombre: 'Combo 2',
         precio: 60,
         foto: 'hamb.jpg',
-        ingredientes: 'Hamburguesa, papas y refresco.',
+        ingredientes: 'Incluye: Hamburguesa, papas y refresco.',
         htmlEstruct: function () {
             return htmlFormat(this.nombre, this.precio);
         }
@@ -36,7 +31,7 @@ const TAM = 32;
         nombre: 'Combo 3',
         precio: 55,
         foto: 'torta.jpg',
-        ingredientes: 'Torta, papas y refresco.',
+        ingredientes: 'Incluye: Torta, papas y refresco.',
         htmlEstruct: function () {
             return htmlFormat(this.nombre, this.precio);
         }

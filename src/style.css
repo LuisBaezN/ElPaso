@@ -5,7 +5,9 @@
 body{
     margin: 1%;
     padding: 0%;
-    background-color: black;
+    background-image: url(https://upload.wikimedia.org/wikipedia/commons/a/ab/Campos_de_Maguey.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 header{
@@ -56,13 +58,6 @@ ul{ list-style: none; }
     width: 300px;
     height: 300px;
     top: 180px;
-}
-
-.info-img{
-    background-image: url(https://upload.wikimedia.org/wikipedia/commons/a/ab/Campos_de_Maguey.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    color: antiquewhite;
 }
 
 /*//////////////////////////// Dimensions, position and colorr ////////////////////////////*/
@@ -194,7 +189,6 @@ ul{ list-style: none; }
     display: flex;
     justify-content: space-between;
     padding: 10px;
-    background-color: rgba(0, 0, 255, 0.2);
 }
 
 .comp-desc{
@@ -202,13 +196,6 @@ ul{ list-style: none; }
 }
 
 /*///////////////////////////////////// Animations /////////////////////////////////////*/
-
-/*
-header:hover{
-    content: '';
-    background-color: aliceblue;
-}
-*/
 
 @keyframes nav-p {
     0% {
@@ -259,7 +246,7 @@ header:hover{
 
 @keyframes table-t {
     0% {
-        transform: translateX(100%);
+        transform: translateX(-110%);
     }
     100% {
         transform: translate(0);
