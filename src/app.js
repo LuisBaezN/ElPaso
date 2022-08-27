@@ -19,9 +19,9 @@ function htmlFormat(nombre, precio){
 function ini(){
     // >>>>>>>>>> Add here the new product!!!!!!!!!!!!
     let prod = [
-        'com1', 'com2', 'com3', 'com4', 'com5', 'com6', 'com7', 'com8',
-        'beb1', 'beb2', 'beb3',
-        'pos1', 'pos2'
+        'com1', 'com2', 'com3', 'com4', 'com6', 'com7',
+        'beb1', 'beb2', 'beb3', 'beb4',
+        'pos1', 'pos2', 'pos3'
     ];
 
     let limite = prod.length;
