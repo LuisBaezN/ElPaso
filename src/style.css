@@ -13,7 +13,8 @@ body{
 header{
     position: fixed;
     top: 0%;
-    width: 98%;
+    left: 0%;
+    width: 100%;
     height: 100%;
     background-color: black;
     display: grid;
@@ -79,7 +80,7 @@ ul{ list-style: none; }
 .dpc-head-i{
     position: fixed;
     top: 0.7%;
-    width: 92%;
+    width: 91.5%;
     left: 2%;
     background-color: rgba(18, 53, 30, 0.5);
     display: flex;
