@@ -8,6 +8,7 @@ body{
     background-image: url(https://upload.wikimedia.org/wikipedia/commons/a/ab/Campos_de_Maguey.jpg);
     background-repeat: no-repeat;
     background-size: cover;
+    background-position: center;
 }
 
 header{
@@ -197,6 +198,24 @@ ul{ list-style: none; }
 }
 
 /*///////////////////////////////////// Animations /////////////////////////////////////*/
+
+.loader {
+    position: fixed;
+    left: 0%;
+    top: 0%;
+    width: 100%;
+    height: 100vh;
+    z-index: 100;
+    background-color: black;
+    display: grid;
+    align-content: center;
+}
+
+.hide {
+    opacity: 0;
+    z-index: 0;
+    transition: opacity 400ms ease-out;
+}
 
 @keyframes nav-p {
     0% {

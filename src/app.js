@@ -1,5 +1,7 @@
 'use strict';
 
+const espera = document.querySelector('.loader');
+
 ////////////////////////////////////// Functions ////////////////////////////////////
 
 /**
@@ -74,3 +76,7 @@ setTimeout(function () {
     let cont = document.getElementById('com1');
     placeDish(cont);
 }, 3000);
+
+window.addEventListener('load', () => {
+    espera.classList.add('hide');
+});
