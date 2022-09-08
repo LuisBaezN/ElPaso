@@ -48,7 +48,9 @@ button{
     border-radius: 10px;
 }
 
-ul{ list-style: none; }
+ul{
+    list-style: none;
+}
 
 /*////////////////////////////////////////// Img //////////////////////////////////////////*/
 
@@ -68,6 +70,7 @@ ul{ list-style: none; }
     position: relative;
     left: 5%;
     width: 90%;
+    height: 320px;
     background-color: rgba(109, 232, 236,0.3);
     display: flex;
     flex-wrap: wrap;
@@ -174,8 +177,7 @@ ul{ list-style: none; }
 /*//////////////////////////////////////// Menu ////////////////////////////////////////*/
 
 .tree{
-    position: relative;
-    top: -37px;
+    
     padding: 0;
     margin: 0;
 }

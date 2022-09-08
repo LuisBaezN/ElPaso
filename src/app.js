@@ -10,9 +10,9 @@ const espera = document.querySelector('.loader');
  * @param {number} precio - Precio del producto.
  * @returns 
  */
-function htmlFormat(nombre, precio){
+function htmlFormat(id, nombre, precio){
     precio = '$' + precio.toFixed(2);
-    return `<div class="comp-desc"><p>${nombre}</p></div><div class="comp-desc"><p>. . . . . . .</p></div><div class="comp-desc"><p>${precio}</p></div>`
+    return `<div class="comp-desc"><p onclick="placeDish(this)" id="${id}">${nombre}</p></div><div class="comp-desc"><p  onclick="placeDish(this)" id="${id}">. . . . . . .</p></div><div class="comp-desc"><p  onclick="placeDish(this)" id="${id}">${precio}</p></div>`
 }
 
 /**
@@ -21,22 +21,45 @@ function htmlFormat(nombre, precio){
 function ini(){
     // >>>>>>>>>> Add here the new product!!!!!!!!!!!!
     let prod = [
-        'com1', 'com2', 'com3', 'com4', 'com6', 'com7',
-        'beb1', 'beb2', 'beb3', 'beb4',
+        'com1', 'com2', 'com3', 'com4', 'com5', 'com6', 'com7',
+        'beb1', 'beb2', 'beb5', 'beb3', 'beb4',
         'pos1', 'pos2', 'pos3'
     ];
-
+    
     let limite = prod.length;
+    const postTag = document.querySelectorAll('.tree');
+    var li = null;
+    var pre = '';
+    let cont = 0;
+
+    let limit = postTag.length;
+    for (let i = 0; i < limit; i++){
+        pre = prod[cont].slice(0,3);
+        while(pre === prod[cont].slice(0,3)){
+            li = document.createElement('li');
+            li.classList.add('prod-desc');
+            //li.setAttribute('onclick', 'placeDish(this)');
+            //li.id = prod[cont];
+            postTag[i].appendChild(li);
+            li = document.createElement('li');
+            li.id = `table-${prod[cont]}`;
+            postTag[i].appendChild(li);
+            cont++;
+            if (cont === 15)
+            break;
+        }
+    }
+
+    let tagDOM = document.querySelectorAll('.prod-desc');
 
     for (let i = 0; i < limite; i++){
-        let tagFormat = htmlFormat(productos[prod[i]].nombre,productos[prod[i]].precio);
-        let tagDOM = document.getElementById(prod[i]);
-        tagDOM.innerHTML = tagFormat;
+        let tagFormat = htmlFormat(prod[i], productos[prod[i]].nombre,productos[prod[i]].precio);
+        tagDOM[i].innerHTML = tagFormat;
     }
 }
 
 /**
- * 
+ * Desplega los detalles del producto
  * @param {Tag} obj - Etiqueta del producto
  */
 function placeDish(obj){

@@ -43,7 +43,7 @@
     },
     "com5":{
         "nombre": "Torta",
-        "precio": 20,
+        "precio": 30,
         "foto": "torta.jpg",
         "ingredientes": "Pechuga de pollo, lechuga, jitomate, cebolla, queso y mayonesa."
     },
@@ -67,7 +67,7 @@
     },
     "beb1":{
         "nombre": "Michelada",
-        "precio": 65,
+        "precio": 70,
         "foto": "mich.jpg",
         "ingredientes": "Cerveza, salsa Maggi, salsa inglesa, Clamato, limón, sal y salsa picante."
     },
@@ -89,15 +89,21 @@
         "foto": "pulque.jpg",
         "ingredientes": "Bebida fermentada proveniente del maguey."
     },
+    "beb5":{
+        "nombre": "Azulito",
+        "precio": 70,
+        "foto": "azul.jpg",
+        "ingredientes": "Vodka"
+    },
     "pos1":{
         "nombre": "Ensalada de manzana",
-        "precio": 15,
+        "precio": 20,
         "foto": "ensa.jpg",
         "ingredientes": "Manzana, durazno, leche condensada y crema."
     },
     "pos2":{
         "nombre": "Fresas con crema",
-        "precio": 15,
+        "precio": 20,
         "foto": "fresas.jpg",
         "ingredientes": "Fresas, crema."
     }
